@@ -1,0 +1,13 @@
+<h1>The Johnsons</h1>
+<hr style="border: 4px solid red;" /><br>
+<h4>Applications</h4>
+
+{% if appList %}
+    <ul>
+    {% for app in appList %}
+        <li><a href="{% url app.appNameSpace %}">{{ app.appTitle }}</a></li>
+    {% endfor %}
+    </ul>
+    {% else %}
+        <p>No apps are available</p>
+    {% endif %}
