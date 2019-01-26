@@ -1,13 +1,36 @@
-<h1>The Johnsons</h1>
-<hr style="border: 4px solid red;" /><br>
-<h4>Applications</h4>
+{% load static %}
 
-{% if appList %}
-    <ul>
-    {% for app in appList %}
-        <li><a href="{% url app.appNameSpace %}">{{ app.appTitle }}</a></li>
-    {% endfor %}
-    </ul>
-    {% else %}
-        <p>No apps are available</p>
-    {% endif %}
+<html>
+
+  <head>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+  </head>
+
+  <body>
+    <br>
+    <div id="title-wrapping" class="container">
+      <center>
+        <h1 id="titled">The Johnsons</h1>
+      </center>
+      <hr style="border: 4px solid red;" /><br>
+    </div>
+    <div id="applist">
+      <h4 style="font-size: 40px">Our Shitty Applications</h4>
+      <br>
+      {% if appList %}
+          <ul>
+          {% for app in appList %}
+              <li class="listings"><a href="{% url app.appNameSpace %}">{{ app.appTitle }}</a></li>
+          {% endfor %}
+          </ul>
+          {% else %}
+              <p>No apps are available</p>
+      {% endif %}
+    </div>
+
+  </body>
+
+</html>
+

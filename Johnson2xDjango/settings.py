@@ -25,7 +25,7 @@ SECRET_KEY = '7hwfro92z!g%r)_9_0=+=6ahjio-y8e!=g2&@v9@5-gtw!o%q8'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [10.111.24.1]
+#ALLOWED_HOSTS = [10.111.24.30]
 
 
 # Application definition
@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    
+
 ]
 
 MIDDLEWARE = [
@@ -57,7 +57,7 @@ ROOT_URLCONF = 'Johnson2xDjango.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'debug': True,
@@ -122,3 +122,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+LOGIN_REDIRECT_URL = '/clubPetPen'

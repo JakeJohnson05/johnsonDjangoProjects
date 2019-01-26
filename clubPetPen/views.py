@@ -8,3 +8,7 @@ from django.views.generic import FormView
 
 def idk(request):
     return HttpResponse("Club PetPen")
+
+
+# def login(request):
+
